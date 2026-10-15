@@ -24,7 +24,6 @@ endif
 
 # LMO packages
 PRODUCT_PACKAGES += \
-    LMOFreeform \
     LMOFreeformSidebar
 
 # BtHelper
