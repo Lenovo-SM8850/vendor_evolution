@@ -1,0 +1,9 @@
+// SPDX-License-Identifier: Apache-2.0
+
+aconfig_values {
+    name: "aconfig-values-lineage-cp2a-android.view.inputmethod-all",
+    package: "android.view.inputmethod",
+    srcs: [
+        "*_flag_values.textproto",
+    ],
+}
