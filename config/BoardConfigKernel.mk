@@ -215,10 +215,10 @@ ifneq ($(TARGET_KERNEL_CLANG_AUTOFDO_PROFILE),none)
 endif
 
 # Set the out dir for the kernel's O= arg
-# This needs to be an absolute path, so only set this if the standard out dir isn't used
+# This needs to be an absolute path, so prefix the source root whenever the out dir is relative
 OUT_DIR_PREFIX := $(shell echo $(OUT_DIR) | sed -e 's|/target/.*$$||g')
 KERNEL_BUILD_OUT_PREFIX :=
-ifeq ($(OUT_DIR_PREFIX),out)
+ifeq ($(filter /%,$(OUT_DIR_PREFIX)),)
     KERNEL_BUILD_OUT_PREFIX := $(BUILD_TOP)/
 endif
 
