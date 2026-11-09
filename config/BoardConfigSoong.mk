@@ -32,9 +32,11 @@ $(foreach v,$(EXPORT_TO_SOONG),$(eval $(call addVar,$(v))))
 
 SOONG_CONFIG_NAMESPACES += lineageGlobalVars
 SOONG_CONFIG_lineageGlobalVars += \
+    spoof_avb_version \
     spoof_first_api_level_32
 
 # Soong bool variables
+SOONG_CONFIG_lineageGlobalVars_spoof_avb_version := $(SPOOF_AVB_VERSION)
 SOONG_CONFIG_lineageGlobalVars_spoof_first_api_level_32 := $(SPOOF_FIRST_API_LEVEL_32)
 
 ifneq ($(TARGET_CAMERA_PACKAGE_NAME),)
