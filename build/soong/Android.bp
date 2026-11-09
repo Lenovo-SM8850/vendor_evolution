@@ -119,6 +119,23 @@ cc_library_headers {
 }
 
 soong_config_module_type {
+    name: "spoof_avb_version",
+    module_type: "cc_defaults",
+    config_namespace: "lineageGlobalVars",
+    bool_variables: ["spoof_avb_version"],
+    properties: ["cppflags"],
+}
+
+spoof_avb_version {
+    name: "spoof_avb_version_defaults",
+    soong_config_variables: {
+        spoof_avb_version: {
+            cppflags: ["-DSPOOF_AVB_VERSION"],
+        },
+    },
+}
+
+soong_config_module_type {
     name: "spoof_first_api_level_32",
     module_type: "cc_defaults",
     config_namespace: "lineageGlobalVars",
